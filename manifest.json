@@ -1,0 +1,31 @@
+{
+  "name": "braindw-io",
+  "vendor": "braindw",
+  "version": "0.0.1",
+  "title": "BrainDW IO",
+  "description": "Pixel app for BrainDW clients",
+  "defaultLocale": "es-AR",
+  "builders": {
+    "react": "3.x",
+    "store": "0.x",
+    "pixel": "0.x",
+    "docs": "0.x",
+    "scripts": "0.x"
+  },
+  "dependencies": {
+    "vtex.pixel-interfaces": "1.x"
+  },
+  "settingsSchema": {
+    "title": "braindw-io",
+    "type": "object",
+    "properties": {
+      "clientKey": {
+        "title": "Client KEY",
+        "description": "Enter the ID (GTM-XXXX) from your Google Tag Manager",
+        "type": "string",
+        "default": "abcdef"
+      }
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
