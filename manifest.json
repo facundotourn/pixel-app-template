@@ -1,7 +1,7 @@
 {
   "name": "braindw-io",
   "vendor": "braindw",
-  "version": "1.0.0-beta.0",
+  "version": "0.0.1-beta.0",
   "title": "BrainDW IO",
   "description": "Pixel app for BrainDW clients",
   "defaultLocale": "es-AR",
@@ -21,9 +21,9 @@
     "properties": {
       "clientKey": {
         "title": "Client KEY",
-        "description": "Enter the ID (GTM-XXXX) from your Google Tag Manager",
+        "description": "Enter the client key provided by BrainDW",
         "type": "string",
-        "default": "abcdef"
+        "default": "default-client-key"
       }
     }
   },
