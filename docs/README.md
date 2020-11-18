@@ -1,8 +1,8 @@
 📢 Use this project, [contribute](https://github.com/vtex-apps/CHANGEME) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# APP NAME
+# BrainDW IO
 
-Aplicación Pixel para clientes de BrainDW.
+Aplicación VTEX IO para clientes de BrainDW.
 
 ![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
 
