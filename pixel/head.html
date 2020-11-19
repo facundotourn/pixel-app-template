@@ -1,10 +1,13 @@
 <script>
-  (function() {
+  (function(window) {
     var appId = "{{settings.clientKey}}";
+
     if (!appId) {
       console.error('Warning: No APP NAME ID is defined. Please configure it in the apps admin.');
-      return
+      return;
     }
+    
+    window.bdwClientKey = appId;
 
     // Add script here
     function braindw_fn() {

@@ -2,6 +2,12 @@ import { canUseDOM } from 'vtex.render-runtime'
 
 import { PixelMessage } from './typings/events'
 
+declare global {
+  interface Window {
+    bdwClientKey: any;
+  }
+}
+
 function braindw_fn() {
   console.log("bdw-start");
   try {
@@ -49,6 +55,11 @@ function braindw_fn() {
 }
 
 export function handleEvents(e: PixelMessage) {
+  const { bdwClientKey: account } = window
+
+  console.log("CLIENT KEY!: ", account)
+  if (!account) return;
+
   switch (e.data.eventName) {
     case 'vtex:pageView': {
       console.log('CAMBIÓ DE PÁGINA!', e)
