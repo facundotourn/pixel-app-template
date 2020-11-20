@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 
+import Shelf from './Shelf/Shelf'
+
 const BraindwShelf = props => {
   const [productos, setProductos] = useState([1, 2, 4]);
 
@@ -21,6 +23,10 @@ const BraindwShelf = props => {
       <h1>Shelf de brain</h1>
       <h6>[{productos.join(', ')}]</h6>
       <h6>{window.bdwClientKey}</h6>
+      <Shelf
+        {...props}
+        productsIds={productos}
+      />
     </>
   );
 }
