@@ -1,5 +1,8 @@
 {
   "pixel.braindw-io": {
     "component": "index"
+  }, 
+  "bdw-shelf": {
+    "component": "BraindwShelf"
   }
 }
