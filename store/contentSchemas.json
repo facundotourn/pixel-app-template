@@ -1,0 +1,15 @@
+{
+  "definitions": {
+    "BraindwShelf": {
+      "title": "BrainDW Shelf",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "ID de la vitrina",
+          "type": "string",
+          "isLayout": false
+        }
+      }
+    }
+  }
+}

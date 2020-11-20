@@ -3,6 +3,9 @@
     "component": "index"
   }, 
   "bdw-shelf": {
-    "component": "BraindwShelf"
+    "component": "BraindwShelf",
+    "content": {
+      "$ref": "app:braindw.braindw-io#/definitions/BraindwShelf"
+    }
   }
 }

@@ -26,7 +26,7 @@ const BraindwShelf = props => {
 }
 
 BraindwShelf.propTypes = {
-
+  id: PropTypes.string
 }
 
 BraindwShelf.schema = {
