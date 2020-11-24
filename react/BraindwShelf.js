@@ -1,10 +1,15 @@
 
 import React, { useEffect, useState } from 'react'
+import ProductList from './Shelf/ProductList';
 
 import Shelf from './Shelf/Shelf'
 
 const BraindwShelf = props => {
+  console.log('PROPS DE BRAINDWSHELF:', props);
+
   const [productos, setProductos] = useState([1, 2, 4]);
+  const productList = ProductList.defaultProps
+  productList.titleText = 'Shelf custom de BrainDW'
 
   useEffect(() => {
     async function fetchData() {
@@ -25,6 +30,7 @@ const BraindwShelf = props => {
       <h6>{window.bdwClientKey}</h6>
       <Shelf
         {...props}
+        productList={productList}
         productsIds={productos}
       />
     </>
