@@ -80,7 +80,7 @@ Shelf.propTypes = {
   data: PropTypes.shape({
     products: shelfContentPropTypes.products,
   }),
-  productsIds: PropTypes.arrayOf(Number),
+  productos: PropTypes.arrayOf(Number),
   /** Category Id. */
   category: PropTypes.string,
   /** Collection Id. */
@@ -105,13 +105,13 @@ Shelf.propTypes = {
 
 const optionsByIdentifier = {
   options: ({
-    productsIds = ["1", "3", "8"],
+    productos = ["1", "3", "8"],
     orderBy = OrdenationTypes.ORDER_BY_TOP_SALE_DESC.value,
     maxItems = ProductList.defaultProps.maxItems
   }) => ({
     ssr: true,
     variables: {
-      ids: productsIds,
+      ids: productos,
       from: 0,
       to: maxItems - 1,
       orderBy

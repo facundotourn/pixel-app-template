@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
+import { getShelfConfig } from './queries/shelfConfigService';
 import ProductList from './Shelf/ProductList';
 
 import Shelf from './Shelf/Shelf'
@@ -7,20 +8,42 @@ import Shelf from './Shelf/Shelf'
 const BraindwShelf = props => {
   console.log('PROPS DE BRAINDWSHELF:', props);
 
-  const [productos, setProductos] = useState([1, 2, 4]);
-  const productList = ProductList.defaultProps
-  productList.titleText = 'Shelf custom de BrainDW'
+  const [settings, setSettings] = useState({
+    productos: [1],
+    paginationDotsVisibility: 'desktopOnly',
+    productList: ProductList.defaultProps
+  })
+
+  const [productos, setProductos] = useState([1]);
+  const [productList, setProductList] = useState(ProductList.defaultProps)
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-      const data = await response.json()
-      console.log("LLEGO POKEMON!", data)
-      setProductos([2, 4, 8])
+      try {
+        const response = await getShelfConfig(window.bdwClientKey, props.id)
+        
+        const { productos: p } = response
+  
+        setProductos(p)
+        setProductList({
+          ...productList,
+          titleText: response.titleText
+        })
+  
+        setSettings({
+          ...response,
+          productList: {
+            ...productList,
+            ...response.cfg,
+            titleText: response.titleText
+          }
+        })
+      } catch (ex) {
+        console.error(ex.message)
+      }
     }
 
     fetchData()
-    console.log("FUI A BUSCAR POKEMON!")
   }, [])
 
   return (
@@ -29,9 +52,7 @@ const BraindwShelf = props => {
       <h6>[{productos.join(', ')}]</h6>
       <h6>{window.bdwClientKey}</h6>
       <Shelf
-        {...props}
-        productList={productList}
-        productsIds={productos}
+        {...settings}
       />
     </>
   );
