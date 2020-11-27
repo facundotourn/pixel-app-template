@@ -5,8 +5,7 @@ import ProductList from './Shelf/ProductList';
 
 import Shelf from './Shelf/Shelf'
 
-const BraindwShelf = props => {
-  console.log('PROPS DE BRAINDWSHELF:', props);
+const BraindwShelf = ({ id }) => {
 
   const [settings, setSettings] = useState({
     productos: [1],
@@ -20,7 +19,7 @@ const BraindwShelf = props => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getShelfConfig(window.bdwClientKey, props.id)
+        const response = await getShelfConfig(window.bdwClientKey, id)
         
         const { productos: p } = response
   
@@ -47,14 +46,9 @@ const BraindwShelf = props => {
   }, [])
 
   return (
-    <>
-      <h1>Shelf de brain</h1>
-      <h6>[{productos.join(', ')}]</h6>
-      <h6>{window.bdwClientKey}</h6>
-      <Shelf
-        {...settings}
-      />
-    </>
+    <Shelf
+      {...settings}
+    />
   );
 }
 

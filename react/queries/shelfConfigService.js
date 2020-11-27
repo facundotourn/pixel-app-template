@@ -16,6 +16,5 @@ export async function getShelfConfig(clientKey, vitrinaId) {
     }
   }
   
-
   return data;
 }

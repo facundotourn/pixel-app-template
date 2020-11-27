@@ -4,6 +4,17 @@
   "version": "0.0.5-beta.0",
   "title": "BrainDW IO",
   "description": "Pixel app for BrainDW clients",
+  "billingOptions": {
+    "termsURL": "https://compliance.vtex.com/gdpr/policies/vtex-privacy-policy",
+    "support": {
+      "url": "https://support.vtex.com/hc/requests"
+    },
+    "free": true,
+    "type": "free",
+    "availableCountries": [
+      "*"
+    ]
+  },
   "defaultLocale": "es-AR",
   "builders": {
     "react": "3.x",
