@@ -1,7 +1,7 @@
 {
   "name": "braindw-io",
   "vendor": "braindw",
-  "version": "0.0.5-beta.0",
+  "version": "0.0.6-beta.0",
   "title": "BrainDW IO",
   "description": "Pixel app for BrainDW clients",
   "billingOptions": {
